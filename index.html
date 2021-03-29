@@ -1,0 +1,39 @@
+Question: Mr andrew is given a task to re-arrange the numbers in the array
+based on below conditions:
+a) If sum of both the numbers is ODD
+b)If second number is greater than or equal to its previous number
+sample Input: [5,3,7,6,1,4]
+Output:[4,3,6,7,1,5]<br />
+
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>V Innovate Labz</title>
+</head>
+
+<body>
+  <script>
+    function rearrangeArray(arr){
+      for(var i = 0;i<arr.length;i++){
+        if(arr[arr.length-1-i]>arr[arr.length-2-i] && (arr[i]+arr[arr.length-1-i])%2 != 0){
+          var temp = arr[i];
+          arr[i] = arr[arr.length-1-i];
+          arr[arr.length-1-i] = temp;
+
+        }
+      }
+      document.write("The output using rearrangeArray Function is: "+arr+"<br>");
+    }
+    var arr = rearrangeArray([5,3,7,6,1,4]);
+    document.write(arr);
+
+  </script>
+
+
+</body>
+
+</html>
